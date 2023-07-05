@@ -68,53 +68,30 @@ CREATE DATABASE MansFriends;
 ***
 8. Создать таблицы с иерархией из диаграммы в БД
 
-USE MansFriends;\
-CREATE TABLE animals\
-   (\
-   Id INT AUTO_INCREMENT PRIMARY KEY,\
-   class_name VARCHAR(20)\
-   );
-
-INSERT INTO animals (class_name)\
-VALUES ('Домашние'),
--> ('Вьючные');
-
 ![Задание 8.1](images/8.1.png)
-
-CREATE TABLE pets\
-   (\
-   Id INT AUTO_INCREMENT PRIMARY KEY,\
-   type VARCHAR (20),\
-   class_id INT,\
-   FOREIGN KEY (class_id) REFERENCES animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-   );
-
-INSERT INTO pets (type, class_id)\
-VALUES ('Собаки', 1),\
--> ('Кошки', 1),\
--> ('Хомяки', 1);
 
 ![Задание 8.2](images/8.2.png)
 
-CREATE TABLE pack_animals\
-(\
-Id INT AUTO_INCREMENT PRIMARY KEY,\
-type VARCHAR (20),\
-class_id INT,\
-FOREIGN KEY (class_id) REFERENCES animals (Id) ON DELETE CASCADE ON UPDATE CASCADE\
-);
-
-INSERT INTO pack_animals (type, class_id)\
-VALUES ('Лошади', 1),\
--> ('Верблюды', 1),\
--> ('Ослы', 1);
-
 ![Задание 8.3](images/8.3.png)
+
+[Реализация задания №8](Animals.sql)
 ***
 9. Заполнить низкоуровневые таблицы именами(животных), командами
 которые они выполняют и датами рождения
 
-CREATE TABLE cats\
+![Задание 9.1](images/9.1.png)
+
+![Задание 9.2](images/9.2.png)
+
+![Задание 9.3](images/9.3.png)
+
+![Задание 9.4](images/9.4.png)
+
+![Задание 9.5](images/9.5.png)
+
+![Задание 9.6](images/9.6.png)
+
+[Реализация задания №9](Animals.sql)
 
 
 
