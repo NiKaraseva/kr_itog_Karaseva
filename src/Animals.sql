@@ -138,3 +138,19 @@ INSERT INTO donkeys (name, birth, commands, type_id)
     ('Куку', '2005-07-07', 'голос', 3),
     ('Коко', '2019-06-11', 'кружиться', 3);
 
+
+--- Задание №11
+
+CREATE TABLE all_animals AS
+SELECT *, 'Собаки' AS type FROM dogs
+UNION SELECT *, 'Кошки' AS type FROM cats
+UNION SELECT *, 'Хомяки' AS type FROM hamsters
+UNION SELECT *, 'Лошади' as type FROM horses
+UNION SELECT *, 'Ослы' AS type FROM donkeys;
+
+CREATE TABLE young_animals AS
+SELECT name, birth, commands, type, TIMESTAMPDIFF(MONTH, birth, CURDATE()) AS age_in_month
+FROM all_animals WHERE birth BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND ADDDATE(CURDATE(), INTERVAL -1 YEAR);
+
+SELECT * FROM young_animals;
+
