@@ -154,3 +154,9 @@ FROM all_animals WHERE birth BETWEEN ADDDATE(curdate(), INTERVAL -3 YEAR) AND AD
 
 SELECT * FROM young_animals;
 
+
+--- Задание №12
+
+
+
+
