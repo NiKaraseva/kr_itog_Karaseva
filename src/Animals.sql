@@ -157,6 +157,31 @@ SELECT * FROM young_animals;
 
 --- Задание №12
 
+SELECT dg.Id, dg.name, dg.birth, dg.commands, dg.type_id, pt.type, ya.age_in_month
+FROM dogs dg
+LEFT JOIN young_animals ya ON ya.name = dg.name
+LEFT JOIN pets pt ON pt.Id = dg.type_id
+UNION
+SELECT c.Id, c.name, c.birth, c.commands, c.type_id, pt.type, ya.age_in_month
+FROM cats c
+LEFT JOIN young_animals ya ON ya.name = c.name
+LEFT JOIN pets pt ON pt.Id = c.type_id
+UNION
+SELECT hm.Id, hm.name, hm.birth, hm.commands, hm.type_id, pt.type, ya.age_in_month
+FROM hamsters hm
+LEFT JOIN young_animals ya ON ya.name = hm.name
+LEFT JOIN pets pt ON pt.Id = hm.type_id
+UNION
+SELECT h.Id, h.name, h.birth, h.commands, h.type_id, pa.type, ya.age_in_month
+FROM horses h
+LEFT JOIN young_animals ya ON ya.name = h.name
+LEFT JOIN pack_animals pa ON pa.Id = h.type_id
+UNION
+SELECT d.Id, d.name, d.birth, d.commands, d.type_id, pa.type, ya.age_in_month
+FROM donkeys d
+LEFT JOIN young_animals ya ON ya.name = d.name
+LEFT JOIN pack_animals pa ON pa.Id = d.type_id;
+
 
 
 

@@ -1,7 +1,10 @@
 package Model;
 
-public class Hamster extends Pets{
+import java.util.List;
 
-    public Hamster() {
+public class Hamster extends Pets {
+
+    public Hamster(String name, String date, List<String> commands) {
+        super(name, date, commands);
     }
 }

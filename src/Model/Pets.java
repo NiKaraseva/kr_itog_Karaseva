@@ -3,11 +3,14 @@ package Model;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Pets extends Animals {
+public class Pets extends Animals {
     protected String name;
     protected String dateBirth;
     protected List<String> commands;
 
+    public Pets(String name, String date, List<String> commands) {
+        super(name, date, commands);
+    }
 
     public String getName() {
         return name;
@@ -43,7 +46,7 @@ public abstract class Pets extends Animals {
 
     @Override
     public String toString() {
-        return String.format("%s: имя: %s, дата рождения: %s ", getClass().getSimpleName(), name, getDateBirth());
+        return String.format("%s: имя: %s, дата рождения: %s ", getClass().getSimpleName(), getName(), getDateBirth());
     }
 
     @Override
