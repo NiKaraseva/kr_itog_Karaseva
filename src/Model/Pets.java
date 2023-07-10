@@ -61,5 +61,4 @@ public class Pets extends Animals {
     public int hashCode() {
         return Objects.hash(name);
     }
-
 }

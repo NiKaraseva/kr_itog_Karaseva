@@ -183,6 +183,7 @@ public class PetController {
             case"53"->showCommands(HAMSTER);
             case"6"->showCountPets();
         }
+
         }while(!(menu.isEmpty()||menu.equals("0")));}
 
 }

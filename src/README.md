@@ -130,6 +130,7 @@ UNION SELECT name, birth, commands FROM donkeys;
     животное” 
 
 [Реализация задания №15]()
+
 ***
 
 
